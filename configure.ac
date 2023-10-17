@@ -225,7 +225,7 @@ AM_CONDITIONAL(HAVE_ATFUNCS, test x"$ac_neta_haveatfuncs" = x"yes")
 AM_CONDITIONAL(USE_SHADOWPW, test x$shadowpw = xyes)
 
 dnl Enable silent Automake rules if present
-m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
+dnl m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
 dnl --------------------- generate files
 AC_CONFIG_FILES([
