@@ -17,7 +17,7 @@ cnid_sources = ['cnid_init.c', 'cnid.c']
 libcnid = static_library(
     'cnid',
     cnid_sources,
-    include_directories: root_includes,
+    include_directories: root_includes, acl_includes
     dependencies: libcnid_deps,
     link_whole: libcnid_libs,
     install: false,

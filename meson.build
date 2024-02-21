@@ -998,15 +998,13 @@ elif host_os == 'freebsd'
     sunacl = cc.find_library(
         'sunacl',
         dirs: '/usr/local/lib',
-        has_headers: '/usr/local/include/sunacl.h',
-        header_include_directories: include_directories('/usr/local/include'),
         required: false,
     )
     if cc.has_function('acl', dependencies: sunacl)
         with_acls = true
         message('Enabling support for ZFS ACLs using libsunacl')
         acl_deps += sunacl
-        acl_includes += include_directories('/usr/local/include')
+        acl_includes += '/usr/local/include'
         cdata.set('HAVE_ACLS', 1)
         cdata.set('HAVE_FREEBSD_SUNACL', 1)
         cdata.set('HAVE_NFSV4_ACLS', 1)
